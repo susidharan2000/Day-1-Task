@@ -1,0 +1,49 @@
+objects and its internal representation in Javascript?
+
+Objects in JavaScript is the most important data-type and forms the building blocks for modern JavaScript.
+One of easiest way to create a javascript object is object literal, simply define the property and values inside curly braces.
+Example:
+let student = {name: 'susidharan',
+            age: 24, 
+            mark:56};
+The properties of an object define the characteristics of the object. You access the properties of an object with a simple dot-notation.
+Example:   objectName.propertyName
+     student.name;
+     student.age;
+Like all JavaScript variables, both the object name and property name are case sensitive. You can define a property by assigning it a value. For example, let’s create an object named student1 and give it properties named class, height, and rank as follows.
+Example:
+     var student1 = new Object();
+     student1.class = '8th grade';
+     student1.height = '175';
+     student1.rank = 15;
+Unassigned properties of an object are undefined (and not null).
+Example:
+     student1.weight; // undefined
+Properties of JavaScript objects can also be accessed or set using a bracket notation. Objects are sometimes called associative arrays.
+Example: 
+     student1['class'] = '8th grade';
+     student1['height'] = 170;
+     student1['rank'] = 15;
+constructor function allows to create multiple objects of same flavor.
+Example:
+   function employee(name, id) {
+         this.name = name;
+         this.id = id;
+       }
+    let employee1 = new employee(’susi’, 'sa23412’);
+    let employee2 = new employee(’raja’, '#345e5345’)
+    console.log(employee1.name);    //Output: susi
+    console.log(employee2.name);    // output: raja
+    console.log(employee2.id);      //output: #345e5345
+Objects can also be created using the Object.create() method. This method can be very useful, because it allows you to choose the prototype object for the object you want to create, without having to define a constructor function.
+Example:
+    var car = {
+        name: 'maruthi',
+        DisplayName : function(){console.log(this.name)}
+    }
+    var car1 = Object.create(car);
+    car1.DisplayName(); // output = 'maruthi'
+    var car2 = Object.create(car);
+    car2.name = 'Honda';
+    car2.DisplayName(); // output = 'Honda'
+ 
